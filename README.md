@@ -4,7 +4,7 @@ PC微信Hook程序：Hook到微信消息，然后与Python程序进行交互。
 ## 支持微信版本
 * 2.8.0.133
 
-## WeChatSpy.dll开发的源代码（C++）
+## WeChatSpy.dll开发的源代码(C++)
 [https://github.com/MaoningGuan/WeChatSpy](https://github.com/MaoningGuan/WeChatSpy)
 
 ## 返回数据样例
