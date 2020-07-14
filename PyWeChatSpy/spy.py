@@ -59,6 +59,25 @@ class WeChatSpy:
             t_socket_client_receive.daemon = True
             t_socket_client_receive.start()
 
+    def __str_to_json(self, data):
+        """
+        把接收到的json字符串反序列化成python对象
+        :param data:
+        :return:
+        """
+        data_list = data.split(',"content":"')
+        # print(data_list)
+        if len(data_list) == 1:
+            return literal_eval(data_list[0])
+        elif len(data_list) == 2:
+            data_info = data_list[0] + '}'
+            data_json = literal_eval(data_info)
+            content = data_list[1].strip('"}')
+            data_json['content'] = content
+            return data_json
+        else:
+            raise
+
     def receive(self, socket_client):
         while True:
             data_str = None
@@ -73,28 +92,25 @@ class WeChatSpy:
                 else:
                     pid = "unknown"
                     return self.logger.warning(f"A WeChat process (PID:{pid}) has disconnected: {e}")
-            if data_str:
-                # length = len(threading.enumerate())  # 枚举返回个列表
-                # print("线程数量：", length)
-                # print(data_str)  # 打印接收到的数据
-                # print(type(data_str))
-                # print('---------------------------')
-                data = None
-                try:
-                    data = literal_eval(data_str.replace("\n", "\\n"))
-                    # print(data)
-                    # print(type(data))
-                except:
-                    self.logger.warning(f"暂时只支持接收文本消息和微信自带表情。")
-                    data = None
-                if data:
-                    # print('socket_client:', socket_client)
-                    # print(type(socket_client))
-                    if not self.__pid2client.get(data["pid"]) and data["type"] == 200:
-                        self.__pid2client[data["pid"]] = socket_client
-                        self.logger.info(f"A WeChat process (PID:{data['pid']}) successfully connected")
-                    if callable(self.__parser):
-                        self.__parser(data)
+
+            if data_str and data_str.endswith("*393545857*"):  # 防止socket黏包
+                for data in data_str.split("*393545857*"):
+                    if data:
+                        try:
+                            data = self.__str_to_json(data)
+                            # print(data)
+                            # print(type(data))
+                        except:
+                            self.logger.warning("接收数据解析出错！")
+                            data = None
+                        if data:
+                            # print('socket_client:', socket_client)
+                            # print(type(socket_client))
+                            if not self.__pid2client.get(data["pid"]) and data["type"] == 200:
+                                self.__pid2client[data["pid"]] = socket_client
+                                self.logger.info(f"A WeChat process (PID:{data['pid']}) successfully connected")
+                            if callable(self.__parser):
+                                self.__parser(data)
 
     def __send(self, data, pid):
         if pid:
