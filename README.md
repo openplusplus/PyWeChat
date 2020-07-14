@@ -21,4 +21,4 @@ PC微信Hook逆向程序：Hook到微信消息，然后与Python程序进行交�
 
 ## 功能列表
 * `send_text(wxid, content, at_wxid="")` > 发送文本，暂不支持@某个人
-* `query_personal_info()` > 查询用户个人信息
+* `query_personal_info()` > 查询登录账号的个人信息
