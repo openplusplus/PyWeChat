@@ -9,9 +9,14 @@ PC微信Hook程序：Hook到微信消息，然后与Python程序进行交互。
 
 ## 返回数据样例
 * `{'pid': , 'self': , 'type': 1, 'msg_type': , 'chatroom_ID': '', '': '', 'content': ''}` > 微信消息 
-* `self = 1: 代表消息由用户自己发出`
-* `self = 0: 代表消息由其他人发出`
-* `msg_type: 代表消息类型`
+  * `self`类型说明：
+    * 1 消息由当前登录账号发出
+    * 0 消息由他人发出
+  * `msg_type`类型说明：
+    * 1 文本消息
+    * 3 图片消息
+    * 37 好友申请消息
+	* ...
 * `{'pid': , 'type': 2, 'wx_ID': '', 'nickname': '', 'account': '', 'phone': '', 'province': '', 'city': '', 'device': '', 'avatar': ''` > 用户个人信息
 
 ## 功能列表
