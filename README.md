@@ -41,5 +41,5 @@ PC微信Hook逆向程序：Hook到微信消息，然后与Python程序进行交�
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example3.jpg)  
 
 ## 作者寄语
-* 本项目完全开源，若你开发了更多的功能，可以pull request给我。
+* 本项目为开源项目，若你开发了更多的功能，可以pull request给我。
 * 开源代码地址：[WeChatSpy.dll 开发的源代码(C++)](https://github.com/MaoningGuan/PyWeChat/blob/master/PyWeChatSpy/1644691589/WeChatSpy.dll) 
