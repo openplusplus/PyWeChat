@@ -98,6 +98,7 @@ class WeChatSpy:
                     if data:
                         try:
                             data = self.__str_to_json(data)
+                            # data = literal_eval(data)
                             # print(data)
                             # print(type(data))
                         except:

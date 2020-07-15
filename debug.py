@@ -8,8 +8,8 @@ def parser(data):
             length = len(threading.enumerate())  # 枚举返回个列表
             print("线程数量：", length)
             print(data)
-            spy.send_text(data.get('wx_ID'), "接收到消息")
-            spy.query_personal_info()  # 获取用户个人信息
+            spy.send_text(data.get('wx_ID'), "python server已接收到消息！")
+            # spy.query_personal_info()  # 获取用户个人信息
 
     # 用户个人信息
     elif data.get("type") == 2:
