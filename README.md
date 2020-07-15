@@ -33,9 +33,9 @@ PC微信Hook逆向程序：Hook到微信消息，然后与Python程序进行交�
 python example.py
 ```
 3. 用另外一个微信给登录的电脑微信发送好友消息或者群消息，运行结果如下：
-> * 显示接收到的微信消息：
+> * 显示接收到的微信消息：  
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example1.png)
-> * 好友消息自动回复：
+> * 好友消息自动回复：  
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example2.jpg)
-> * 微信群消息自动回复：
+> * 微信群消息自动回复：  
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example3.jpg)
