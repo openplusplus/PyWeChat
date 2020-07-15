@@ -36,6 +36,6 @@ python example.py
 > * 显示接收到的微信消息：
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example1.png)
 > * 好友消息自动回复：
-![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example3.jpg)
-> * 微信群消息自动回复：
 ![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example2.jpg)
+> * 微信群消息自动回复：
+![](https://github.com/MaoningGuan/PyWeChat/blob/master/images/example3.jpg)
