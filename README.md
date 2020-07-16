@@ -12,7 +12,7 @@ PC微信Hook逆向程序：Hook到微信消息，然后与Python程序进行交�
 * [https://github.com/MaoningGuan/WeChatSpy](https://github.com/MaoningGuan/WeChatSpy)
 
 ## 返回数据样例
-* `{'pid': , 'self': , 'type': 1, 'msg_type': , 'chatroom_ID': '', '': '', 'content': ''}` > 微信消息 
+* `{'pid': , 'self': , 'type': 1, 'msg_type': , 'chatroom_ID': '', 'wx_ID': '', 'content': ''}` > 微信消息 
   * `self`类型说明：
     * 1 消息由当前登录账号发出
     * 0 消息由他人发出
